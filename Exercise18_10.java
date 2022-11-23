@@ -16,22 +16,25 @@ public class Exercise18_10 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a string to parse: ");
-        String s = input.nextLine();
+        String s = input.nextLine(); // stores the string
         System.out.println("Enter the character you want to parse for: ");
-        char c = input.nextLine().charAt(0);
 
+        // since java does not have .nextChar(), this approach is a good alternative for parsing the character entered
+        // it also stores that character 
+        char c = input.nextLine().charAt(0); 
 
-        System.out.println(count(s, c));
+        // prints what the method returns in the console passing the two previously stores variables as arguments in the method
+        System.out.println(count(s, c)); 
     }
 
     public static int count(String str, char a){
-        int occurrences = 0;
-        for(int i = 0; i < str.length(); i++){
-            if(str.charAt(i) == a){
+        int occurrences = 0; // this integer keeps count of how many times a specified character appears in the string
+        for(int i = 0; i < str.length(); i++){ // the for loop is set up to run as long as the string is. 
+            if(str.charAt(i) == a){ // if there is a matching letter to the one specified, 1 is added to the count
                 occurrences++;
             }
         }
 
-        return occurrences;
+        return occurrences; // returns the final amount
     }
 }
